@@ -1,84 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Professional Portfolio</title>
-  <meta name="description" content="Professional portfolio: introduction, experience, projects, skills, and contact." />
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa3b2; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
-      --radius:12px; --max-width:1100px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; background:linear-gradient(180deg,var(--bg),#071024); color:#e6eef6; -webkit-font-smoothing:antialiased}
-    .container{max-width:var(--max-width); margin:36px auto; padding:28px}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yohan Gollapalli - AI/ML Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .top-links{display:flex; gap:14px; justify-content:flex-end; font-size:14px; margin-bottom:10px}
-    .top-links a{color:var(--accent); text-decoration:none; font-weight:600}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-    header{display:flex; gap:20px; align-items:center}
-    .avatar{width:112px; height:112px; border-radius:14px; background:linear-gradient(135deg,var(--accent),#7c3aed); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:36px}
-    h1{margin:0; font-size:28px}
-    p.lead{color:var(--muted); margin-top:8px}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    nav{margin-left:auto}
-    nav a{color:var(--muted); margin-left:18px; text-decoration:none; font-weight:600}
-    nav a.cta{background:linear-gradient(90deg,var(--accent),#7c3aed); color:#021226; padding:8px 12px; border-radius:10px}
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-    .grid{display:grid; gap:22px}
-    .intro-card{background:var(--card); padding:20px; border-radius:var(--radius); box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+        h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
 
-    .two-col{grid-template-columns: 2fr 1fr; align-items:start}
-    section{background:var(--glass); padding:18px; border-radius:14px}
+        .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
 
-    .timeline{display:flex; flex-direction:column; gap:14px}
-    .job{background:#06101a; padding:14px; border-radius:10px}
-    .job h4{margin:0 0 6px 0}
-    .job .meta{color:var(--muted); font-size:13px}
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
 
-    .projects{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px}
-    .project{background:linear-gradient(180deg,#071229,#061422); padding:14px; border-radius:10px}
-    .project .tags{color:var(--muted); font-size:13px}
+        .contact-links a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
 
-    .skills{display:flex; flex-wrap:wrap; gap:8px}
-    .skill{background:#071529; padding:8px 10px; border-radius:999px; color:var(--muted); font-weight:600}
+        .contact-links a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
 
-    form label{display:block; font-size:13px; color:var(--muted); margin-bottom:8px}
-    input[type=text], input[type=email], textarea{width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.03); background:#021226; color:#e6eef6}
-    textarea{min-height:120px}
-    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    button{background:var(--accent); color:#012; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer}
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
 
-    footer{margin-top:28px; color:var(--muted); font-size:13px; text-align:center}
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 10px;
+        }
 
-    @media (max-width:900px){ .two-col{grid-template-columns:1fr} nav{display:none} .form-row{grid-template-columns:1fr} .avatar{width:84px;height:84px;font-size:28px}}
-  </style>
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .experience-item:hover, .project-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item h3, .project-item h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .experience-meta, .project-meta {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .experience-item ul, .project-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-item li, .project-item li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 5px 5px 5px 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border-top: 4px solid #764ba2;
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-category p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .education {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .education h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="top-links">
-      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="mailto:you@example.com">Email</a>
+    <div class="container">
+        <header>
+            <h1>Yohan Gollapalli</h1>
+            <p class="subtitle">AI/ML Developer & Full-Stack Engineer</p>
+            <p>📍 Nellore, Andhra Pradesh | 📧 yohangollapalli25@gmail.com | 📱 +91-8688893510</p>
+            <div class="contact-links">
+                <a href="https://github.com/yohangollapalli" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yohangollapalli" target="_blank">LinkedIn</a>
+                <a href="https://hackerrank.com/yohangollapalli" target="_blank">HackerRank</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>About Me</h2>
+            <p class="summary">
+                Recent Artificial Intelligence and Data Science graduate with hands-on experience in full-stack development, 
+                machine learning, and web automation. Proven track record developing scalable applications using Python, 
+                Flask, and FastAPI, including a 90% accurate deep learning image forgery detection system and real-time 
+                RAG-based chatbot solutions. Strong problem-solving abilities with expertise in web scraping, API 
+                integration, and cloud technologies.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <h3>Bachelor of Technology - Artificial Intelligence and Data Science</h3>
+                <p><strong>N.B.K.R.I.S.T.</strong> | 2025 | CGPA: 7.8</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Python Development Intern</h3>
+                <p class="experience-meta">SLASH MARK | Dec 2024 – Apr 2025</p>
+                <ul>
+                    <li>Completed comprehensive virtual internship program focused on Python development and software engineering best practices</li>
+                    <li>Developed and deployed multiple Python applications demonstrating proficiency in core programming concepts and problem-solving</li>
+                    <li>Implemented optimized solutions using efficient algorithms and data structures, improving code performance and maintainability</li>
+                    <li>Gained hands-on experience with Python frameworks, debugging techniques, and version control systems</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-item">
+                <h3>Digital Image Forgery Detection System</h3>
+                <p class="project-meta">Team Leader & Full-Stack Developer | Dec 2024 – May 2025</p>
+                <div>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Deep Learning</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">HTML/CSS</span>
+                </div>
+                <ul>
+                    <li>Led a 4-person team to develop an end-to-end web application for detecting manipulated digital images using deep learning</li>
+                    <li>Designed and trained CNN-based model achieving 90% accuracy in distinguishing authentic from forged images</li>
+                    <li>Built responsive web interface with Flask backend, enabling real-time image upload and classification with instant results</li>
+                    <li>Implemented comprehensive data preprocessing pipeline and model optimization techniques for improved performance</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>RAG-Powered Conversational Chatbot</h3>
+                <p class="project-meta">AI/ML Developer | May 2025</p>
+                <div>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">WebSockets</span>
+                    <span class="tech-badge">FAISS</span>
+                    <span class="tech-badge">Gemini API</span>
+                    <span class="tech-badge">Vector Databases</span>
+                </div>
+                <ul>
+                    <li>Architected and deployed real-time conversational AI chatbot using Retrieval-Augmented Generation (RAG) architecture</li>
+                    <li>Integrated FAISS vector database for efficient document retrieval with sub-second response times</li>
+                    <li>Implemented WebSocket connections enabling seamless real-time communication between users and AI assistant</li>
+                    <li>Leveraged Gemini Flash 2.0 API for natural language processing, handling 100+ concurrent user queries</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Automated Web Scraping & Data Extraction Tool</h3>
+                <p class="project-meta">Backend Developer | May 2025</p>
+                <div>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">BeautifulSoup</span>
+                    <span class="tech-badge">Selenium</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">SQLite</span>
+                </div>
+                <ul>
+                    <li>Developed automated web scraping solution to extract structured data from multiple e-commerce websites</li>
+                    <li>Implemented robust HTML parsing algorithms with error handling and anti-blocking mechanisms</li>
+                    <li>Created reusable scraping modules reducing manual data collection time by 80%</li>
+                    <li>Built data validation and cleaning pipeline, processing 10,000+ records with 95% accuracy rate</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <p>Python, Java, C, JavaScript, HTML, CSS</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks</h4>
+                    <p>Flask, Django, FastAPI, SQLAlchemy</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Science</h4>
+                    <p>NumPy, Pandas, Matplotlib, scikit-learn</p>
+                </div>
+                <div class="skill-category">
+                    <h4>AI/ML Tools</h4>
+                    <p>FAISS, Gemini API, Cursor, Claude, ChatGPT</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Development Tools</h4>
+                    <p>Jupyter, VS Code, PyCharm</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud & Databases</h4>
+                    <p>Google Cloud Platform, PostgreSQL</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Yohan Gollapalli</p>
+        </footer>
     </div>
-    <header>
-      <div style="display:flex;gap:16px;align-items:center">
-        <div class="avatar">YN</div>
-        <div>
-          <h1>Your Name — Product Designer &amp; Frontend Engineer</h1>
-          <p class="lead">I build accessible, delightful web experiences. I design interfaces and implement them with production-grade frontend code. Open to full-time roles, contracting, and collaborations.</p>
-        </div>
-      </div>
-      <nav aria-label="Primary">
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact" class="cta">Contact</a>
-      </nav>
-    </header>
-    <!-- rest of content remains unchanged -->
-  </div>
 </body>
 </html>
